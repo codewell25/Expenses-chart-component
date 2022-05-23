@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="top">
+
+            <div class="top-left">
+                <p>My balance</p>
+                <h3>
+                    $921.48
+                </h3>
+            </div>
+
+            <div class="top-right">
+                <img src="images/logo.svg" alt="">
+            </div>
+        </div>
+
+        <div class="bottom">
+            <h2>Spending - Last 7 days</h2>
+
+            <div>
+                <canvas id="myChart" width="400" height="200"></canvas>
+            </div>
+
+            <hr>
+
+            <div class="bottom-details">
+
+                <div class="detail-sec-1">
+                    <p>Total this month</p>
+                    <h2>$478.33</h2>
+                </div>
+
+                <div class="detail-sec-2">
+                    <h4>+2.4%</h4>
+                    <p>from last month</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        const ctx = document.getElementById('myChart');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
+                datasets: [{
+                    label: 'Daily Expenses in $',
+                    data: [17.45, 34.91, 52.36, 31.07, 23.39, 43.28, 25.48],
+                    backgroundColor: " hsl(10, 79%, 65%)"
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+    <script>
+        let dailyExpences = [
+            {
+                "day": "mon",
+                "amount": 17.45
+            },
+            {
+                "day": "tue",
+                "amount": 34.91
+            },
+            {
+                "day": "wed",
+                "amount": 52.36
+            },
+            {
+                "day": "thu",
+                "amount": 31.07
+            },
+            {
+                "day": "fri",
+                "amount": 23.39
+            },
+            {
+                "day": "sat",
+                "amount": 43.28
+            },
+            {
+                "day": "sun",
+                "amount": 25.48
+            }
+        ]
+
+
+    </script>
+</body>
+
+</html>
